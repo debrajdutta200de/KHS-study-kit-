@@ -1,0 +1,316 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium SaaS Design System - Student Survival Kit */
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    
+    /* Base colors - Light mode (Premium) */
+    --background: 220 25% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary - Deep Blue (Intelligence, Focus) */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 83% 53%;
+    
+    /* Secondary - Emerald Green (Growth, Success) */
+    --secondary: 158 64% 52%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted - Subtle backgrounds */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Accent - Purple (Creativity, Wisdom) */
+    --accent: 262 83% 92%;
+    --accent-foreground: 262 83% 48%;
+    
+    /* Semantic colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 220 13% 91%;
+    --glass-shadow: 220 13% 15%;
+    
+    /* Education specific */
+    --education-blue: 217 91% 60%;
+    --education-green: 142 71% 45%;
+    
+    /* Charts - Educational palette */
+    --chart-1: 221 83% 53%;
+    --chart-2: 158 64% 52%;
+    --chart-3: 262 83% 58%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 199 89% 48%;
+    
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+  .dark {
+    /* Base colors - Pure Black with Violet Accents */
+    --background: 270 100% 2%;
+    --foreground: 0 0% 98%;
+    --card: 270 50% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 270 50% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary - Brighter in dark mode */
+    --primary: 221 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 83% 58%;
+    
+    /* Secondary */
+    --secondary: 158 64% 48%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 270 35% 12%;
+    --muted-foreground: 0 0% 71%;
+    
+    /* Accent */
+    --accent: 270 70% 25%;
+    --accent-foreground: 270 70% 92%;
+    
+    /* Semantic colors - adjusted for dark mode */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    
+    /* Borders and inputs */
+    --border: 270 45% 20%;
+    --input: 270 45% 20%;
+    --ring: 270 83% 58%;
+    
+    /* Glassmorphism - dark mode */
+    --glass-bg: 270 60% 10%;
+    --glass-border: 270 50% 30%;
+    --glass-shadow: 270 100% 2%;
+    
+    /* Charts */
+    --chart-1: 270 83% 58%;
+    --chart-2: 158 64% 52%;
+    --chart-3: 262 83% 68%;
+    --chart-4: 38 92% 60%;
+    --chart-5: 199 89% 58%;
+    
+    /* Sidebar */
+    --sidebar-background: 270 100% 3%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 91% 60%;
+    --sidebar-primary-foreground: 270 100% 2%;
+    --sidebar-accent: 270 50% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 270 40% 18%;
+    --sidebar-ring: 270 91% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+/* Premium Utility Classes */
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    background: hsla(var(--glass-bg) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--glass-border) / 0.2);
+    box-shadow: 0 8px 32px 0 hsla(var(--glass-shadow) / 0.1);
+  }
+
+  .glass-strong {
+    background: hsla(var(--glass-bg) / 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsla(var(--glass-border) / 0.3);
+    box-shadow: 0 8px 32px 0 hsla(var(--glass-shadow) / 0.15);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  /* Focus ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* Smooth scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Component-specific styles */
+@layer components {
+  /* Premium card */
+  .premium-card {
+    @apply bg-card border border-border rounded-xl shadow-sm hover-lift;
+  }
+
+  /* Premium button */
+  .premium-button {
+    @apply inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-200;
+    @apply focus-ring disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  /* Empty state */
+  .empty-state {
+    @apply flex flex-col items-center justify-center p-8 text-center;
+  }
+
+  /* Error state */
+  .error-state {
+    @apply flex flex-col items-center justify-center p-6 text-center bg-destructive/10 border border-destructive/20 rounded-lg;
+  }
+
+  /* Loading state */
+  .loading-state {
+    @apply flex items-center justify-center p-8;
+  }
+}
